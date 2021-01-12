@@ -1,5 +1,8 @@
-$color: red;
-
-body {
-  background: $color;
-}
+@import "partials/_variables.scss";
+@import "partials/_common.scss";
+@import "partials/_mixins.scss";
+@import "partials/_header.scss";
+@import "partials/_main.scss";
+@import "partials/_footer.scss";
+@import "partials/_main-description.scss";
+@import "partials/_recent-courses.scss";

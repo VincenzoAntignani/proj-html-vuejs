@@ -1,0 +1,71 @@
+.recent_courses {
+  padding: 50px 0;
+  height: 1000px;
+  background: $backgroundMain;
+  // background: grey;
+  .rec_cours_cont {
+    @include widthMargin;
+    padding: 20px 0;
+    // height: 250px;
+    background: white;
+    text-align: center;
+    color: $defoultTextColor;
+    h3 {
+      margin-bottom: 10px;
+      font-size: 30px;
+      font-weight: 500;
+    }
+    p {
+      margin-bottom: 50px;
+      padding: 0 205px;
+      font-size: 18px;
+      line-height: 32px;
+    }
+    .cont_card_rec_cours {
+      display: flex;
+      justify-content: center;
+      .card_rec_cours {
+        margin: 0 5px;
+        width: 360px;
+        height: 530px;
+        // border: 1px solid black;
+        text-align: left;
+        box-shadow: $boxShadowCard;
+        .img_card_rec_cours {
+          display: block;
+          img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+        .text_card_rec_cours {
+          padding: 30px 20px;
+          h4 {
+            margin-bottom: 15px;
+            color: #495057;
+          }
+          h5 {
+            margin-bottom: 20px;
+            padding: 0;
+            font-size: 20px;
+            line-height: 30px;
+            font-weight: 500;
+          }
+          p {
+            margin-bottom: 35px;
+            padding: 0;
+            line-height: 28px;
+          }
+          span {
+            display: block;
+            font-size: 12px;
+            font-weight: 500;
+            color: $redText;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@mixin widthMargin {
+  width: $widthCont;
+  margin: 0 auto;
+}
+
+@mixin ulStyle {
+  display: flex;
+  list-style: none;
+}
+
+@mixin aStyle {
+  text-decoration: none;
+}
+
+@mixin defoultFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
