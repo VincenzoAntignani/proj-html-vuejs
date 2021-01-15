@@ -1,0 +1,91 @@
+.recent_courses {
+  padding-top: 50px;
+  background: $backgroundMain;
+  .rec_cours_cont {
+    @include widthMargin;
+    padding: 20px 0;
+    background: white;
+    text-align: center;
+    color: $defoultTextColor;
+    @include titleTextSection;
+    .cont_card_rec_cours {
+      display: flex;
+      justify-content: center;
+      .card_rec_cours {
+        @include setupCard;
+        min-height: 400px;
+        .text_card_rec_cours {
+          padding: 30px 20px;
+          h5 {
+            display: inline-block;
+            position:relative;
+            margin-bottom: 15px;
+            color: #495057;
+            font-size: 18px;
+            font-weight: 500;
+            z-index: 999;
+          }
+          hr {
+            position: absolute;
+            left: 0;
+            bottom: 4px;
+            width: 40px;
+            border: 4px solid rgba(255, 0, 0, 0.1) ;
+          }
+          h4 {
+            margin-bottom: 20px;
+            padding: 0;
+            font-size: 19px;
+            line-height: 30px;
+            font-weight: 600;
+            transition: 0.7s;
+            &:hover {
+              color: $redText;
+              cursor: pointer;
+            }
+          }
+          p {
+            margin-bottom: 35px;
+            padding: 0 25px 0 0;
+            line-height: 34px;
+          }
+          span {
+            display: block;
+            font-size: 12px;
+            font-weight: 500;
+            color: $redText;
+            // cursor: pointer;
+          }
+        }
+      }
+    }
+    .interview {
+      @include defoultFlex;
+      text-align: center;
+      margin: 50px 0;
+      background-image: url("../img/quote.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      p {
+        margin: 0;
+        padding: 30px 35px;
+        font-size: 28px;
+        line-height: 40px;
+        a {
+          display: inline-block;
+          position: relative;
+          color: $redText;
+          font-weight: 700;
+          transition: 0.4s;
+          &::after {
+            background: #d74d52;
+            @include transitionBorderLink;
+          }
+          &:hover::after {
+            width: 0;
+          }
+        }
+      }
+    }
+  }
+}

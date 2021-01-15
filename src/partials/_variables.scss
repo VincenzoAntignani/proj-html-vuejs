@@ -1,11 +1,25 @@
-$headerFont: 'Bodoni Moda', serif;
-$fontPage: 'Rubik', sans-serif;
+// Width container
+$widthCont: 1140px;
+
+// Fonts
+$primaryFont: 'Open Sans', sans-serif;
+$secondaryFont: 'Spartan', sans-serif;
+$headerFont: 'Playfair Display', serif;
+
+// Color text
 $defoultTextColor: #192836;
-
-$widthCont: 60%;
-
-$backgroundMain: #FFFFFF;
 $redText: #D74D52;
+$colorTextFooter: #a3b5ca;
 
+// Background color
+$backgroundMain: #FFFFFF;
+$backgroundFooter: #192735;
+$bgFooterBottom: #15222e;
+
+$backgroundBtnRegister: #d74d52;
+
+// Cards
 $colorTextCard: #192836;
 $boxShadowCard: #ebebeb 6px 9px 47px -4px;
+
+$boxShadowFooterNewsletter: #15222e 1px 3px 30px 10px;

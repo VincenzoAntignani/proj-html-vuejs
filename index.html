@@ -6,12 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <!-- Google fonts header -->
+    <!-- Font header h1-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Primary Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <!-- Secondary font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+
+
     <!-- Vue js -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <!-- CSS -->
@@ -19,128 +27,224 @@
     <title>proj-html-vuejs</title>
   </head>
   <body>
-    <!-- header -->
-    <header>
-      <div class="nav_bar">
-        <div class="nav_content">
-          <img src="img/Logo.jpg" alt="logo">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Academics</a></li>
-            <li><a href="#">Courses</a></li>
-            <li><a href="#">News</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="header_title">
-        <h1>Professional Development For Coaches And Leader</h1>
-        <h3>Learn more</h3>
-      </div>
-    </header>
-    <!-- /header -->
-    <!-- main -->
-    <main>
-      <!-- Container Description -->
-      <div class="description">
-        <div class="cont_description">
-          <h2>Since 2000, weve been partering width education leaders to <span>increase equity and achievement</span> for all students.</h2>
-          <div class="row_card">
-            <div class="card_descr">
-              <img src="img/svg-0.svg" alt="">
-              <h3>Online Coaching</h3>
-              <p>Lorem ipsum is simply dummy text of he print ing and typesetting has been the industrys.</p>
-            </div>
-            <div class="card_descr">
-              <img src="img/svg-1.svg" alt="">
-              <h3>Consultation</h3>
-              <p>Lorem ipsum is simply dummy text of he print ing and typesetting has been the industrys.</p>
-            </div>
-            <div class="card_descr">
-              <img src="img/svg-2.svg" alt="">
-              <h3>Life Programs</h3>
-              <p>Lorem ipsum is simply dummy text of he print ing and typesetting has been the industrys.</p>
+    <!-- Root -->
+    <div id="root">
+      <!-- header -->
+      <header>
+        <div class="nav_bar">
+            <div class="nav_content">
+              <img :src="logoAcademy" alt="logoAcademy">
+
+              <ul>
+                <li @mouseover="listHome = true" @mouseleave="listHome = false">
+                <a href="#">Home</a>
+                <transition name="fade">
+                  <ul v-if="listHome">
+                    <li class="sublist"><a href="#">Home 1</a></li>
+                    <li class="sublist"><a href="#">Home 2</a></li>
+                    <li class="sublist"><a href="#">Home 3</a></li>
+                    <li class="sublist"><a href="#">Home 4</a></li>
+                    <li class="sublist"><a href="#">Home 5</a></li>
+                    <li class="sublist"><a href="#">Home 6</a></li>
+                  </ul>
+                 </transition>
+                </li>
+
+                <li @mouseover="listAbout = true" @mouseleave="listAbout = false">
+                  <a href="#">About</a>
+                  <transition name="fade">
+                    <ul v-if="listAbout">
+                      <li class="sublist"><a href="#">History</a></li>
+                      <li class="sublist"><a href="#">Discover</a></li>
+                      <li class="sublist"><a href="#">Faculty Leaders</a></li>
+                    </ul>
+                   </transition>
+                </li>
+
+                <li><a href="#">Academic</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">News</a></li>
+              </ul>
             </div>
           </div>
-          <div class="row_numbers">
-            <div class="students_numb">
-              <img src="img/counter-shape-1-1-1.png" alt="">
-              <h4>6500<span><i class="fas fa-plus"></i></span> </h4>
-              <h3>Students</h3>
+        <div class="header_title">
+          <h1 class="animate__animated animate__fadeInUp">{{messageh1}}</h1>
+          <h3 class="animate__animated animate__fadeInUp">{{textBtn}}</h3>
+        </div>
+      </header>
+      <!-- /header -->
+
+      <!-- main -->
+      <main>
+        <!-- Container Description -->
+        <section class="description">
+          <div class="cont_description">
+            <h2>Since 2000, weve been partering width education leaders to <span>increase equity and achievement</span> for all students.</h2>
+
+            <template v-if="servicesCard != 0">
+              <div class="row_card">
+                <div class="card_descr" v-for="(service, index) in servicesCard">
+                  <img :src="service.img" alt="">
+                  <h3>{{service.title}}</h3>
+                  <p>{{service.text}}</p>
+                </div>
+              </div>
+            </template>
+
+            <template v-if="ourNumbers != 0">
+              <div class="row_numbers">
+                <div class="our_numbers" v-for="number in ourNumbers">
+                  <img :src="number.img" alt="">
+                  <h4 :style="{color: number.textcolor}" class="animate__animated animate__fadeInUp">{{number.value}}<span>{{number.entity}}</span> </h4>
+                  <h3>{{number.valueOf}}</h3>
+                </div>
+              </div>
+            </template>
+          </div>
+        </section>
+        <!-- /Container Description -->
+        <!-- Recent Courses -->
+        <section class="recent_courses">
+          <div class="rec_cours_cont">
+            <h3>{{titleRecCours}}</h3>
+            <p>{{messageRecCours}}</p>
+            <!-- Card -->
+            <div class="cont_card_rec_cours">
+              <div class="card_rec_cours" v-for="(card, index) in cardsRecCours">
+                <div class="cont_img">
+                  <img :src="card.img" alt="">
+                </div>
+                <div class="text_card_rec_cours">
+                  <h5>{{card.mode}}<hr></h5>
+                  <h4>{{card.whatInclude}}</h4>
+                  <p>{{card.willLearn}}</p>
+                  <span>Course by : <a href="#" :style="{color: card.madeBy['color']}">{{card.madeBy['name']}}</a></span>
+                </div>
+              </div>
             </div>
-            <div class="online_courses_numb">
-              <img src="img/counter-shape-2-1-1.png" alt="">
-              <h4>200<span><i class="fas fa-plus"></i></span> </h4>
-              <h3>Online Courses</h3>
+            <!-- /Card -->
+            <!-- Interview -->
+            <div class="interview">
+              <p>"Academics was committed to my success from the moment I attended an Open House. With the support of caring <a href="#">advisors, professors, and staff</a> i was able to thrive in courses, gain recognition through scholarships, and finish <strong>with confidence in my <a href="#">@academics</a> abilities.</strong>"</p>
             </div>
-            <div class="happy_clients_numb">
-              <img src="img/counter-shape-3-1-1.png" alt="">
-              <h4>100<span><i class="fas fa-percentage"></i></span> </h4>
-              <h3>Happy Clients</h3>
+            <!-- Interview -->
+          </div>
+        </section>
+        <!-- /Recent Courses -->
+        <!-- Upcoming events -->
+        <section class="upcoming">
+          <div class="upcoming_video">
+            <i class="fas fa-play"></i>
+          </div>
+          <div class="upcoming_descr">
+            <h2>Upcoming Events</h2>
+            <div class="upcoming_descr_text">
+              <p>Princeton offers admission information sessions and student-led tours to campus visitors</p>
+              <a href="#">Learn more<i class="fas fa-chevron-right"></i></a>
+              <p>Admission information sessions and student-led tours to campus visitors</p>
+              <a href="#">Learn more<i class="fas fa-chevron-right"></i></a>
+              <a href="#"><i class="far fa-map"></i>Event Locations<i class="fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </section>
+        <!-- /Upcoming events -->
+        <!-- Our Blogs -->
+        <section class="our_blogs">
+          <h3>{{titleOurBlogs}}</h3>
+          <p>{{textOurBlogs}}</p>
+          <template v-if="cardsOurBlogs != 0">
+            <div class="cont_card_blogs">
+              <div class="card_blogs" v-for="(card, index) in cardsOurBlogs">
+                <div class="cont_img">
+                  <img :src="card.img" alt="">
+                </div>
+                <div class="text_card_blogs">
+                  <ul>
+                    <li><i :class="card.iconLinks.icon.iconAdmin"></i><a href="#">{{card.iconLinks.text.admin}}</a></li>
+                    <li><i :class="card.iconLinks.icon.iconUniversity"></i><a href="#">{{card.iconLinks.text.university}}</a></li>
+                  </ul>
+                  <h3>{{card.titleBlog}}</h3>
+                  <hr>
+                  <a href="">{{card.readMore.text}}</a><i :class="card.readMore.icon"></i>
+                </div>
+              </div>
+            </div>
+          </template>
+          <!-- </div> -->
+        </section>
+        <!-- Our Blogs -->
+        <!-- Slider -->
+        <section class="slider" v-if="imgSlider">
+          <div class="img_slider" v-for="image in imgSlider">
+            <img :src="image.img" alt="">
+            <div class="overlay">
+              <i :class="image.iconHover"></i>
+              <span>{{image.textHover}}</span>
+            </div>
+          </div>
+        </section>
+        <!-- /Slider -->
+      </main>
+      <!-- /main -->
+
+      <!-- footer -->
+      <footer>
+        <div class="footer_top">
+          <div class="register">
+            <div class="subscrib">
+              <div class="input_field">
+                <input type="text" name="" value="" placeholder="Subscribe to our newsletter">
+                <button type="button" name="button">Register</button>
+              </div>
+              <div class="subscrib_text">
+                <p><a href="">Insights is Picwik</a> University's thought leadership publication for sharing knowledge on management, technology and innovation.</p>
+                <a href="#">Take me there<i class="fas fa-chevron-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="utilities_link">
+            <div class="list_link">
+              <h3>Contact Us</h3>
+              <ul>
+                <li v-for="(link, index) in linksContactUs"><i :class="link.icon"></i>{{link.text}}</li>
+              </ul>
+            </div>
+            <div class="list_link">
+              <h3>Support Us</h3>
+              <ul>
+                <li v-for="link in linksSupportUs"><a href="#"><i class="fas fa-chevron-right"></i>{{link}}</a></li>
+              </ul>
+            </div>
+            <div class="list_link">
+              <h3>Explore</h3>
+              <ul>
+                <li v-for="link in linksExplore"><a href="#"><i class="fas fa-chevron-right"></i>{{link}}</a></li>
+              </ul>
+            </div>
+            <div class="list_link">
+              <h3>Visit</h3>
+              <ul>
+                <li v-for="link in linksVisit"><a href="#"><i class="fas fa-chevron-right"></i>{{link}}</a></li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
-      <!-- /Container Description -->
-      <!-- Recent Courses -->
-      <div class="recent_courses">
-        <div class="rec_cours_cont">
-          <h3>Recent Courses</h3>
-          <p>Whether you're considering a foundation course or an undergraduate degree master's or a PhD, academics is a place where students thrive.</p>
-          <!-- Card -->
-          <div class="cont_card_rec_cours">
-            <div class="card_rec_cours">
-              <div class="img_card_rec_cours">
-                <img src="img/bruce-mars-FWVMhUa_wbY-unsplash.jpg" alt="">
-              </div>
-              <div class="text_card_rec_cours">
-                <h4>Free</h4>
-                <h5>UI Animation using Sketch 3, Principle App, and Flinto</h5>
-                <p>This online photography course will teach you how to take amazing images and even sell...</p>
-                <span>Course by: University</span>
-              </div>
+        <div class="footer_bottom">
+          <div class="cont_footer_bottom">
+            <div class="left_footer_bottom">
+              <p><i class="far fa-copyright"></i>Copyright 2020 tophive. All Rights Reserved.</p>
             </div>
-            <div class="card_rec_cours">
-              <div class="img_card_rec_cours">
-                <img src="img/course-1-2.jpg" alt="">
-              </div>
-              <div class="text_card_rec_cours">
-                <h4>Free</h4>
-                <h5>UI Animation using Sketch 3, Principle App, and Flinto</h5>
-                <p>This online photography course will teach you how to take amazing images and even sell...</p>
-                <span>Course by: University</span>
-              </div>
-            </div>
-            <div class="card_rec_cours">
-              <div class="img_card_rec_cours">
-                <img src="img/william-thomas-ny6tO4ItOEY-unsplash.jpg" alt="">
-              </div>
-              <div class="text_card_rec_cours">
-                <h4>Free</h4>
-                <h5>UI Animation using Sketch 3, Principle App, and Flinto</h5>
-                <p>This online photography course will teach you how to take amazing images and even sell...</p>
-                <span>Course by: University</span>
-              </div>
+            <div class="right_footer_bottom">
+              <ul>
+                <li v-for="link in linksFooterBottom"><a href="#">{{link}}</a></li>
+              </ul>
             </div>
           </div>
-          <!-- /Card -->
-
-          <!-- Riparti da qui -->
         </div>
-      </div>
-      <!-- /Recent Courses -->
-    </main>
-    <!-- /main -->
-    <!-- footer -->
-    <footer>
-
-    </footer>
-    <!-- /footer -->
-
-
-
-
-
+      </footer>
+      <!-- /footer -->
+    </div>
+    <!-- /Root -->
   <script src="js/main.js" charset="utf-8"></script>
   </body>
 </html>

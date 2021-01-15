@@ -1,8 +1,10 @@
 header {
   display: flex;
   position: relative;
-  height: 900px;
-  background: lightblue;
+  height: 1065px;
+  background-image: url("../img/02_Landing-Page.jpg");
+  background-size: cover;
+  background-position: center;
   font-family: $headerFont;
   .nav_bar {
     position:absolute;
@@ -11,13 +13,11 @@ header {
     width: 99%;
     height: 75px;
     background: #FFFFFF;
-    // border-right: 20px solid rgba(0, 0, 0, 0.8);
     .nav_content {
       @include widthMargin;
       display: flex;
       justify-content: space-between;
       height: 75px;
-      // border: 1px solid black;
       img {
         height: 110px;
       }
@@ -26,37 +26,80 @@ header {
         display: flex;
         align-items: center;
         li {
+          @include defoultFlex;
+          position: relative;
           padding: 0 20px;
+          height: 50px;
           a {
+            position: relative;
             text-decoration: none;
             color: $defoultTextColor;
-            font-weight: 900;
+            font-weight: 700;
             font-size: 14px;
+            transition: all 0.4s ease-in-out;
+            &::after {
+              content: "";
+              width: 0;
+              height: 2px;
+              background: $redText;
+              position: absolute;
+              right: 0;
+              bottom: 0px;
+              color: $redText;
+            }
+            &:hover {
+              color: $redText;
+            }
+            &:hover::after {
+              color: $redText;
+              transition: all 0.4s ease-in-out;
+              width: 25px;
+            }
+          }
+          & ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: absolute;
+            top: 50px;
+            left: -15px;
+            padding: 10px;
+            background: #ffffff;
+            li.sublist {
+              display: flex;
+              justify-content: flex-start;
+              padding: 0;
+              height: 40px;
+              min-width: 120px;
+            }
           }
         }
       }
     }
   } //nav_bar
   .header_title {
-    margin: auto;
-    width: 800px;
-    // border: 1px solid black;
+    margin: 325px auto;
+    width: 850px;
     text-align: center;
     h1 {
-      font-family: $headerFont;
       font-weight: 400;
-      font-size: 50px;
+      font-size: 57px;
       color: $defoultTextColor;
+      line-height: 70px;
     }
     h3 {
       display: inline-block;
       margin-top: 40px;
-      padding: 10px 30px;
+      padding: 15px 45px;
+      font-size: 14px;
       font-weight: 400;
       color: #495057;
-      border-top: 1px solid #777777;
-      border-bottom: 1px solid #777777;
+      border: 1px solid #777777;
+      transition: 0.5s;
       &:hover {
+        color: white;
+        background: #d74d52;
+        border: 1px solid #d74d52;
         cursor: pointer;
       }
     }

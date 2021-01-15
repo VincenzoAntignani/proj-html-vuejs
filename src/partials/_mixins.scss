@@ -8,12 +8,56 @@
   list-style: none;
 }
 
-@mixin aStyle {
-  text-decoration: none;
-}
-
 @mixin defoultFlex {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin titleTextSection {
+  h3 {
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: 600;
+    font-family: $secondaryFont;
+  }
+  p {
+    margin-bottom: 50px;
+    padding: 0 240px;
+    font-size: 16px;
+    line-height: 32px;
+  }
+}
+
+@mixin setupCard {
+  margin: 0 15px;
+  width: 33%;
+  text-align: left;
+  box-shadow: $boxShadowCard;
+  &:hover img {
+    transform: scale(1.5);
+  }
+  .cont_img {
+    display: block;
+    overflow: hidden;
+    height: 200px;
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+      transition: 0.5s;
+    }
+  }
+}
+
+@mixin transitionBorderLink {
+    content: "";
+    height: 1px;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    margin-left: 5px;
+    transition: all 0.4s ease-in-out;
 }
